@@ -1,0 +1,29 @@
+create table Persona
+
+legajo int pk,
+idRol int
+
+
+create table Rol
+
+id int pk,
+idHoras int,
+idProyecto int
+
+create table Horas
+
+id int pk
+hD int,
+hS int,
+hM int
+
+create table Proyecto
+
+id int pk,
+idCliente int
+
+create table Cliente
+
+id int pk,
+cenCostos int,
+cenFacturacion int
