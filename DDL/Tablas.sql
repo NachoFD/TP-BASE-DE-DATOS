@@ -1,27 +1,10 @@
 create schema TP;
 use TP;
 
-create table CentroCostos (
-
-id int not null,
-descripcion varchar(255),
-
-primary key (id)
-);
-
-create table CentroFacturacion (
-idCostos int not null,
-descripcion varchar(255),
-importe double,
-
-foreign key (idCostos) references CentroCostos(id)
-);
-
 create table Cliente (
 
 id int not null,
-cenGastos int not null,
-cenFacturacion int not null,
+Nombre varchar(30),
 
 Primary key (id)
 );
@@ -30,6 +13,7 @@ create table Proyecto (
 
 id int not null,
 idCliente int not null,
+
 primary key (id),
 foreign key (idCliente) references Cliente(id)
 );
@@ -52,6 +36,17 @@ idProyecto int not null,
 Primary Key (id),
 Foreign Key (idHoras) references Horas(id),
 foreign key (idProyecto) references Proyecto(id)
+);
+
+create table CostosYFacturacion (
+
+idCliente int not null,
+idRol int not null,
+descripcion varchar(255),
+importe double,
+
+Foreign Key (idCliente) references Cliente(id),
+Foreign key (idRol) references Rol(id)
 );
 
 create table Persona (
