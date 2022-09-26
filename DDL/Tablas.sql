@@ -55,7 +55,21 @@ Legajo int not null,
 Nombre varchar(30),
 Apellido varchar(30),
 idRol int not null,
+idProyecto int,
 
 Primary Key (Legajo),
 Foreign Key (idRol) references Rol(id)
+);
+
+create table HorasCargadas (
+idHC int not null auto_increment,
+idProyecto int not null,
+Legajo int not null,
+idRol int not null,
+Horas int,
+
+Primary Key (idHC),
+foreign key (idProyecto) references proyecto(id),
+foreign key (Legajo) references persona(Legajo),
+foreign key (idRol) references persona(idRol)
 );
