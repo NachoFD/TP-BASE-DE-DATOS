@@ -1,0 +1,2 @@
+ALTER TABLE horascargadas
+CHANGE COLUMN idHC idHC INT(11) NOT NULL;

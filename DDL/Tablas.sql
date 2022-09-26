@@ -73,3 +73,10 @@ foreign key (idProyecto) references proyecto(id),
 foreign key (Legajo) references persona(Legajo),
 foreign key (idRol) references persona(idRol)
 );
+
+create table numerador (
+	tabla varchar(255) not null,
+    siguiente int,
+    
+    Primary Key (tabla)
+);
