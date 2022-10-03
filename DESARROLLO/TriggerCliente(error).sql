@@ -5,7 +5,7 @@ create trigger AutoIncremento
   for each row
 begin
 
-   if not exists (select tabla from numerador) = 'Cliente' 
+   if not exists (select tabla from numerador where tabla = 'Cliente')  
    then begin
    
    insert into numerador (tabla, siguiente)
