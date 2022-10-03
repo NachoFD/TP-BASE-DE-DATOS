@@ -15,5 +15,5 @@ begin
    
    update cliente
    set id = numerador.siguiente
-   where numerador.tabla = 'Cliente';
+   where numerador.tabla = 'Cliente' and numerador.siguiente + 1;
 end 
